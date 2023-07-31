@@ -11,7 +11,7 @@ computer_option = random.choice(options)
 
 if user_option == computer_option:
   print("Computer option is", computer_option)
-  print("empat!")
+  print("Tie!")
   
 elif user_option == "rock":
   if computer_option == "scissor":
