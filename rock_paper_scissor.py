@@ -1,38 +1,54 @@
 import random
 
-options = ("scissor", "rock", "paper")
+print("Bienvenido a piedra papel o tijera")
 
-print("welcome to rock, paper, scissor ")
-user_option = input("what is option selected?\n").lower()
+options = ("piedra", "papel","tijera")
 
-if not user_option in options:
-  print("that option does not exist ")
-  
-computer_option = random.choice(options)
+win_human = 0
+win_machine = 0
+round = 1
 
-if user_option == computer_option:
-  print("Computer option is", computer_option)
-  print("Tie!")
-  
-elif user_option == "rock":
-  if computer_option == "scissor":
-    print("Computer option is", computer_option)
-    print("you win, rock beats scissor")
-  else:
-    print("Computer option is", computer_option)
-    print("you losse, paper beats rock")
-elif user_option == "paper":
-  if computer_option == "rock":
-    print("Computer option is", computer_option)
-    print("you win, paper beats rock")
-  else:
-    print("Computer option is", computer_option)
-    print("you losse, scissor beats paper")
-elif user_option == "scissor":
-  if computer_option == "paper":
-    print("Computer option is", computer_option)
-    print("you win, sccisor beats paper")
-  else:
-    print("Computer option is", computer_option)
-    print("you losse, rock beats scissor")
+
+while win_human < 3 and win_machine < 3:
     
+    print("*" * 15)
+    print("Ronda", round)
+    user_option = input("Cual es su elección => ").lower()
+
+    if not user_option in options:
+        print("la opción ingresada no es correcta")
+        continue
+    computer_option = random.choice(options)
+    
+
+    if user_option == computer_option:
+        print("Empate")
+
+    elif user_option == "tijera":
+        if computer_option == "papel":
+            print("Usted gana tijera corta papel")
+            win_human += 1
+            print("tu =",win_human, "\nmaquina" , win_machine)
+        else:
+            print("usted pierde piedra rompe tijeras")
+            win_machine += 1
+            print("tu =",win_human, "\nmaquina" , win_machine)
+    elif user_option == "papel":
+        if computer_option == "piedra":
+            print("Usted gana papel envuelve piedra")
+            win_human += 1
+            print("tu =",win_human, "\nmaquina" , win_machine)
+        else:
+            print("usted pierde tijera corta papel")
+            win_machine += 1
+            print("tu =",win_human, "\nmaquina" , win_machine)
+    elif user_option == "piedra":
+        if computer_option == "tijera":
+            print("Usted gana piedra rompe tijera")
+            win_human += 1
+            print("tu =",win_human, "\nmaquina" , win_machine)
+        else:
+            print("usted pierde tijera corta papel")
+            win_machine += 1
+            print("tu =",win_human, "\nmaquina" , win_machine)
+    round += 1
