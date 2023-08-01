@@ -1,12 +1,13 @@
 import random
 
-options = ("scissor", "rock", "papper")
+options = ("scissor", "rock", "paper")
 
-print("welcome to rock, papper, scissor ")
+print("welcome to rock, paper, scissor ")
 user_option = input("what is option selected?\n").lower()
 
 if not user_option in options:
   print("that option does not exist ")
+  
 computer_option = random.choice(options)
 
 if user_option == computer_option:
@@ -19,18 +20,18 @@ elif user_option == "rock":
     print("you win, rock beats scissor")
   else:
     print("Computer option is", computer_option)
-    print("you losse, papper beats rock")
-elif user_option == "papper":
+    print("you losse, paper beats rock")
+elif user_option == "paper":
   if computer_option == "rock":
     print("Computer option is", computer_option)
-    print("you win, papper beats rock")
+    print("you win, paper beats rock")
   else:
     print("Computer option is", computer_option)
-    print("you losse, scissor beats papper")
+    print("you losse, scissor beats paper")
 elif user_option == "scissor":
-  if computer_option == "papper":
+  if computer_option == "paper":
     print("Computer option is", computer_option)
-    print("you win, sccisor beats papper")
+    print("you win, sccisor beats paper")
   else:
     print("Computer option is", computer_option)
     print("you losse, rock beats scissor")
